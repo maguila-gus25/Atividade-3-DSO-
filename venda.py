@@ -1,14 +1,14 @@
 from cliente import Cliente
 from pacote_viagem import PacoteViagem
 
+
 class Venda:
-    def __init__(self, codigo, cliente: Cliente, descricao, pacote: PacoteViagem, quantidade, preco_total):
+    def __init__(self, codigo, cliente: Cliente, descricao, pacote: PacoteViagem, quantidade):
         self.__codigo = codigo
         self.__cliente = cliente
         self.__descricao = descricao
         self.__pacote = pacote
         self.__quantidade = quantidade
-        self.__preco_total = preco_total
 
     @property
     def codigo(self):
@@ -40,21 +40,16 @@ class Venda:
 
     @pacote.setter
     def pacote(self, pacote: PacoteViagem):
-            self.__pacote = pacote
+        self.__pacote = pacote
 
     @property
-    def duracao(self):
-        return self.__duracao
+    def quantidade(self):
+        return self.__quantidade
 
-    @duracao.setter
-    def duracao(self, duracao):
-        self.__durante = duracao
-        
-    @property
+    @quantidade.setter
+    def quantidade(self, quantidade):
+        self.__quantidade = quantidade
+
     def preco_total(self):
-        return self.__preco_total
-        
-    @preco_total.setter
-    def preco_total(self, preco_total):
-        self.__preco_total = preco_total
-        
+        return self.__quantidade * self.pacote.custo_unitario
+
