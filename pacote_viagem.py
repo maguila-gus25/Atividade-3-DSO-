@@ -37,4 +37,3 @@ class PacoteViagem:
     @custo_unitario.setter
     def custo_unitario(self, custo_unitario):
         self.__custo_unitario = custo_unitario
-   
